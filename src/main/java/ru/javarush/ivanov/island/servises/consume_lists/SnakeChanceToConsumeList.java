@@ -1,12 +1,14 @@
-package main.java.ru.javarush.ivanov.island.variables.animal_params;
+package main.java.ru.javarush.ivanov.island.servises.consume_lists;
+
+import main.java.ru.javarush.ivanov.island.servises.WildLife;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class WolfChanceToConsumeList {
+public class SnakeChanceToConsumeList {
     private static Map<String, Integer> chanceToConsume = new ConcurrentHashMap<>();
 
-    private void fillList() {
+    static {
         chanceToConsume.put("Bear", 0);
         chanceToConsume.put("Boar", 15);
         chanceToConsume.put("Buffalo", 10);
@@ -25,8 +27,14 @@ public class WolfChanceToConsumeList {
         chanceToConsume.put("Wolf", 0);
     }
 
+    private SnakeChanceToConsumeList() {
+    }
+
     public static Map<String, Integer> getList() {
         return chanceToConsume;
     }
 
+    public static void setChanceToConsume(Map<String, Integer> chanceToConsume) {
+        SnakeChanceToConsumeList.chanceToConsume = chanceToConsume;
+    }
 }
