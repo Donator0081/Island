@@ -1,4 +1,4 @@
-package main.java.ru.javarush.ivanov.island.servises.consume_lists;
+package main.java.ru.javarush.ivanov.island.variables.consume_lists_factory;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

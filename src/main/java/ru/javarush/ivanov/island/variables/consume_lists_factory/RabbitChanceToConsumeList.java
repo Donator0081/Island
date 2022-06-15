@@ -1,9 +1,9 @@
-package main.java.ru.javarush.ivanov.island.servises.consume_lists;
+package main.java.ru.javarush.ivanov.island.variables.consume_lists_factory;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class GoatChanceToConsumeList extends ChanceToConsumeList {
+public class RabbitChanceToConsumeList extends ChanceToConsumeList {
     private static Map<String, Integer> chanceToConsume = new ConcurrentHashMap<>();
 
     static {
@@ -25,7 +25,7 @@ public class GoatChanceToConsumeList extends ChanceToConsumeList {
         chanceToConsume.put("Wolf", 0);
     }
 
-    public GoatChanceToConsumeList() {
+    public RabbitChanceToConsumeList() {
     }
 
     public  Map<String, Integer> getList() {

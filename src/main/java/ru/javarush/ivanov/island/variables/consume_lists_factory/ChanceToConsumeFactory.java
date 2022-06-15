@@ -1,6 +1,5 @@
-package main.java.ru.javarush.ivanov.island.servises;
+package main.java.ru.javarush.ivanov.island.variables.consume_lists_factory;
 
-import main.java.ru.javarush.ivanov.island.servises.consume_lists.*;
 import main.java.ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 
 public final class ChanceToConsumeFactory {
