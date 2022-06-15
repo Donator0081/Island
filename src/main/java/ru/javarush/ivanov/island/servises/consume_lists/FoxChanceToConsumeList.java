@@ -1,32 +1,31 @@
 package main.java.ru.javarush.ivanov.island.servises.consume_lists;
 
-
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class SnakeChanceToConsumeList extends ChanceToConsumeList {
+public class FoxChanceToConsumeList extends ChanceToConsumeList {
     private static Map<String, Integer> chanceToConsume = new ConcurrentHashMap<>();
 
     static {
         chanceToConsume.put("Bear", 0);
         chanceToConsume.put("Boar", 0);
         chanceToConsume.put("Buffalo", 0);
-        chanceToConsume.put("Caterpillar", 0);
+        chanceToConsume.put("Caterpillar", 40);
         chanceToConsume.put("Deer", 0);
-        chanceToConsume.put("Duck", 10);
-        chanceToConsume.put("Fox", 15);
+        chanceToConsume.put("Duck", 60);
+        chanceToConsume.put("Fox", 0);
         chanceToConsume.put("Goat", 0);
         chanceToConsume.put("Hawk", 0);
         chanceToConsume.put("Herbs", 0);
         chanceToConsume.put("Horse", 0);
-        chanceToConsume.put("Rabbit", 20);
-        chanceToConsume.put("Rat", 40);
+        chanceToConsume.put("Rabbit", 70);
+        chanceToConsume.put("Rat", 90);
         chanceToConsume.put("Sheep", 0);
         chanceToConsume.put("Snake", 0);
         chanceToConsume.put("Wolf", 0);
     }
 
-    public SnakeChanceToConsumeList() {
+    public FoxChanceToConsumeList() {
     }
 
     public  Map<String, Integer> getList() {

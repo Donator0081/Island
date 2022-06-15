@@ -5,7 +5,7 @@ import main.java.ru.javarush.ivanov.island.servises.WildLife;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class WolfChanceToConsumeList {
+public class WolfChanceToConsumeList extends ChanceToConsumeList {
     private static Map<String, Integer> chanceToConsume = new ConcurrentHashMap<>();
 
     static {
@@ -27,14 +27,11 @@ public class WolfChanceToConsumeList {
         chanceToConsume.put("Wolf", 0);
     }
 
-    private WolfChanceToConsumeList() {
+    public WolfChanceToConsumeList() {
     }
 
-    public static Map<String, Integer> getList() {
+    public  Map<String, Integer> getList() {
         return chanceToConsume;
     }
 
-    public static void setChanceToConsume(Map<String, Integer> chanceToConsume) {
-        WolfChanceToConsumeList.chanceToConsume = chanceToConsume;
-    }
 }
