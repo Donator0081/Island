@@ -3,7 +3,7 @@ package main.java.ru.javarush.ivanov.island.entitys.wildlife;
 import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Deer extends Herbivorous {
-    AnimalParams deerParams = new AnimalParams();
+    private AnimalParams deerParams = new AnimalParams();
 
     public Deer() {
         deerParams.setWeight(300);
@@ -24,5 +24,14 @@ public class Deer extends Herbivorous {
     @Override
     public void breed() {
         super.breed();
+    }
+
+    public void setDeerParams(AnimalParams deerParams) {
+        this.deerParams = deerParams;
+    }
+
+    @Override
+    public AnimalParams getParams() {
+        return deerParams;
     }
 }

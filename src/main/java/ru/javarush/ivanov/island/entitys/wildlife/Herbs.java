@@ -5,7 +5,7 @@ import main.java.ru.javarush.ivanov.island.servises.WildLife;
 import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Herbs implements Eatable, WildLife {
-    AnimalParams herbsParams = new AnimalParams();
+    private AnimalParams herbsParams = new AnimalParams();
 
     public Herbs() {
         herbsParams.setWeight(1);
@@ -16,5 +16,14 @@ public class Herbs implements Eatable, WildLife {
     @Override
     public void getEaten() {
 
+    }
+
+    public void setHerbsParams(AnimalParams herbsParams) {
+        this.herbsParams = herbsParams;
+    }
+
+    @Override
+    public AnimalParams getParams() {
+        return herbsParams;
     }
 }

@@ -3,7 +3,7 @@ package main.java.ru.javarush.ivanov.island.entitys.wildlife;
 import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Hawk extends Predator {
-    AnimalParams hawkParams = new AnimalParams();
+    private AnimalParams hawkParams = new AnimalParams();
 
     public Hawk() {
         hawkParams.setWeight(6);
@@ -25,5 +25,14 @@ public class Hawk extends Predator {
     @Override
     public void breed() {
         super.breed();
+    }
+
+    public void setHawkParams(AnimalParams hawkParams) {
+        this.hawkParams = hawkParams;
+    }
+
+    @Override
+    public AnimalParams getParams() {
+        return hawkParams;
     }
 }

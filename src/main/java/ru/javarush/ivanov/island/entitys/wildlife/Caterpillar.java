@@ -2,8 +2,8 @@ package main.java.ru.javarush.ivanov.island.entitys.wildlife;
 
 import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
-public class Caterpillar extends Animal {
-    AnimalParams caterpillarParams = new AnimalParams();
+public class Caterpillar extends Herbivorous {
+    private AnimalParams caterpillarParams = new AnimalParams();
 
     public Caterpillar() {
         caterpillarParams.setWeight(0.01);
@@ -11,18 +11,28 @@ public class Caterpillar extends Animal {
         caterpillarParams.setSpeed(0);
         caterpillarParams.setAmountOfFoodForSatiety(0);
     }
+
     @Override
     public void eat() {
-
+        super.eat();
     }
 
     @Override
     public void move() {
-
+        super.move();
     }
 
     @Override
     public void breed() {
+        super.breed();
+    }
 
+    public void setCaterpillarParams(AnimalParams caterpillarParams) {
+        this.caterpillarParams = caterpillarParams;
+    }
+
+    @Override
+    public AnimalParams getParams() {
+        return caterpillarParams;
     }
 }

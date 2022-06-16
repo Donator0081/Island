@@ -4,7 +4,7 @@ import main.java.ru.javarush.ivanov.island.servises.Eatable;
 import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Fox extends Predator implements Eatable {
-    AnimalParams foxParams = new AnimalParams();
+    private AnimalParams foxParams = new AnimalParams();
 
     public Fox() {
         foxParams.setWeight(8);
@@ -30,5 +30,14 @@ public class Fox extends Predator implements Eatable {
     @Override
     public void getEaten() {
 
+    }
+
+    public void setFoxParams(AnimalParams foxParams) {
+        this.foxParams = foxParams;
+    }
+
+    @Override
+    public AnimalParams getParams() {
+        return foxParams;
     }
 }
