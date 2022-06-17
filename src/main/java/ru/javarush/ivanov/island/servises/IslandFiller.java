@@ -9,6 +9,10 @@ public class IslandFiller {
             for (int j = 0; j < height; j++) {
                 Square square = new Square(i, j);
                 square.setWildLifeAtSquare(SquareFiller.getFilled());
+                for (WildLife unit : square.getWildLifeAtSquare()) {
+                    unit.setWidthNumber(i);
+                    unit.setHeightNumber(j);
+                }
                 result[i][j] = square;
             }
         }

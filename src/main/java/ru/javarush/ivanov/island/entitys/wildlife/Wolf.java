@@ -4,6 +4,8 @@ import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Wolf extends Predator {
     private AnimalParams wolfParams = new AnimalParams();
+    private int widthNumber;
+    private int heightNumber;
 
     public Wolf() {
         wolfParams.setWeight(50);
@@ -33,5 +35,21 @@ public class Wolf extends Predator {
     @Override
     public AnimalParams getParams() {
         return wolfParams;
+    }
+
+    public int getWidthNumber() {
+        return widthNumber;
+    }
+
+    public void setWidthNumber(int widthNumber) {
+        this.widthNumber = widthNumber;
+    }
+
+    public int getHeightNumber() {
+        return heightNumber;
+    }
+
+    public void setHeightNumber(int heightNumber) {
+        this.heightNumber = heightNumber;
     }
 }

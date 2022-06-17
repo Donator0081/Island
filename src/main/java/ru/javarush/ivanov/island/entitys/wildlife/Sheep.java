@@ -4,6 +4,8 @@ import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Sheep extends Herbivorous {
     private AnimalParams sheepParams = new AnimalParams();
+    private int widthNumber;
+    private int heightNumber;
 
     public Sheep() {
         sheepParams.setWeight(70);
@@ -34,5 +36,21 @@ public class Sheep extends Herbivorous {
     @Override
     public AnimalParams getParams() {
         return sheepParams;
+    }
+
+    public int getWidthNumber() {
+        return widthNumber;
+    }
+
+    public void setWidthNumber(int widthNumber) {
+        this.widthNumber = widthNumber;
+    }
+
+    public int getHeightNumber() {
+        return heightNumber;
+    }
+
+    public void setHeightNumber(int heightNumber) {
+        this.heightNumber = heightNumber;
     }
 }
