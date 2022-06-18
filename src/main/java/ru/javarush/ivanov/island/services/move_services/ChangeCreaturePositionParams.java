@@ -12,7 +12,6 @@ public class ChangeCreaturePositionParams {
                 int changedPosition = currentUnit.getHeightNumber() - rnd;
                 if (changedPosition >= 0) {
                     currentUnit.setHeightNumber(changedPosition);
-                    currentUnit.getSquareInfo().getWildLifeAtSquare().add(currentUnit);
                 }
                 break;
 
