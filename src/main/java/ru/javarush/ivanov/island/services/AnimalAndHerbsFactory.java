@@ -1,5 +1,6 @@
-package main.java.ru.javarush.ivanov.island.servises;
+package main.java.ru.javarush.ivanov.island.services;
 
+import main.java.ru.javarush.ivanov.island.entitys.interfaces.WildLife;
 import main.java.ru.javarush.ivanov.island.entitys.wildlife.*;
 import main.java.ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 

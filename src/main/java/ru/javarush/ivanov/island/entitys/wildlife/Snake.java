@@ -1,12 +1,14 @@
 package main.java.ru.javarush.ivanov.island.entitys.wildlife;
 
-import main.java.ru.javarush.ivanov.island.servises.Eatable;
+import main.java.ru.javarush.ivanov.island.entitys.interfaces.Eatable;
+import main.java.ru.javarush.ivanov.island.entitys.territory.Square;
 import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Snake extends Predator implements Eatable {
     private AnimalParams snakeParams = new AnimalParams();
     private int widthNumber;
     private int heightNumber;
+    Square squareInfo;
 
     public Snake() {
         snakeParams.setWeight(15);
@@ -58,5 +60,15 @@ public class Snake extends Predator implements Eatable {
 
     public void setHeightNumber(int heightNumber) {
         this.heightNumber = heightNumber;
+    }
+
+    @Override
+    public Square getSquareInfo() {
+        return squareInfo;
+    }
+
+    @Override
+    public void setSquareInfo(Square squareInfo) {
+        this.squareInfo = squareInfo;
     }
 }

@@ -1,10 +1,11 @@
 package main.java.ru.javarush.ivanov.island.variables.consume_lists_factory;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class RabbitChanceToConsumeList extends ChanceToConsumeList {
-    private static Map<String, Integer> chanceToConsume = new ConcurrentHashMap<>();
+    private static Map<String, Integer> chanceToConsume = new HashMap<>();
 
     static {
         chanceToConsume.put("Bear", 0);

@@ -1,11 +1,13 @@
 package main.java.ru.javarush.ivanov.island.entitys.wildlife;
 
+import main.java.ru.javarush.ivanov.island.entitys.territory.Square;
 import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Deer extends Herbivorous {
     private AnimalParams deerParams = new AnimalParams();
     private int widthNumber;
     private int heightNumber;
+    Square squareInfo;
 
     public Deer() {
         deerParams.setWeight(300);
@@ -13,6 +15,7 @@ public class Deer extends Herbivorous {
         deerParams.setSpeed(4);
         deerParams.setAmountOfFoodForSatiety(50);
     }
+
     @Override
     public void eat() {
         super.eat();
@@ -51,5 +54,15 @@ public class Deer extends Herbivorous {
 
     public void setHeightNumber(int heightNumber) {
         this.heightNumber = heightNumber;
+    }
+
+    @Override
+    public Square getSquareInfo() {
+        return squareInfo;
+    }
+
+    @Override
+    public void setSquareInfo(Square squareInfo) {
+        this.squareInfo = squareInfo;
     }
 }

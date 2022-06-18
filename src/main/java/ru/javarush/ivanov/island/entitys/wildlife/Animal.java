@@ -1,12 +1,21 @@
 package main.java.ru.javarush.ivanov.island.entitys.wildlife;
 
-import main.java.ru.javarush.ivanov.island.servises.WildLife;
+
+import main.java.ru.javarush.ivanov.island.entitys.interfaces.WildLife;
+import main.java.ru.javarush.ivanov.island.entitys.territory.Square;
+import main.java.ru.javarush.ivanov.island.services.breed_services.Breeder;
+import main.java.ru.javarush.ivanov.island.services.move_services.ChangeCreaturePositionParams;
+import main.java.ru.javarush.ivanov.island.services.randomizers.RandomizerForMoveDirection;
 
 public abstract class Animal implements WildLife {
-
+    Square squareInfo;
     public abstract void eat();
 
-    public abstract void move();
+    public void move() {
+        ChangeCreaturePositionParams.changePositionsParams(this, RandomizerForMoveDirection.getResult());
+    }
 
-    public abstract void breed();
+    public void breed(){
+        Breeder.letsBreed(squareInfo,this);
+    }
 }

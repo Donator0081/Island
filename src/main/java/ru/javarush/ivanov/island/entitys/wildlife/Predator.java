@@ -8,11 +8,11 @@ public abstract class Predator extends Animal {
 
     @Override
     public void move() {
-
+        super.move();
     }
 
     @Override
     public void breed() {
-
+        super.breed();
     }
 }

@@ -1,11 +1,13 @@
 package main.java.ru.javarush.ivanov.island.entitys.wildlife;
 
+import main.java.ru.javarush.ivanov.island.entitys.territory.Square;
 import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Wolf extends Predator {
     private AnimalParams wolfParams = new AnimalParams();
     private int widthNumber;
     private int heightNumber;
+    Square squareInfo;
 
     public Wolf() {
         wolfParams.setWeight(50);
@@ -13,6 +15,7 @@ public class Wolf extends Predator {
         wolfParams.setSpeed(3);
         wolfParams.setAmountOfFoodForSatiety(8);
     }
+
     @Override
     public void eat() {
         super.eat();
@@ -51,5 +54,15 @@ public class Wolf extends Predator {
 
     public void setHeightNumber(int heightNumber) {
         this.heightNumber = heightNumber;
+    }
+
+    @Override
+    public Square getSquareInfo() {
+        return squareInfo;
+    }
+
+    @Override
+    public void setSquareInfo(Square squareInfo) {
+        this.squareInfo = squareInfo;
     }
 }
