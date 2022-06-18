@@ -5,7 +5,6 @@ import main.java.ru.javarush.ivanov.island.entitys.territory.Island;
 import main.java.ru.javarush.ivanov.island.entitys.territory.Square;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 public class MoveCreaturesToOtherSquare {
@@ -16,7 +15,7 @@ public class MoveCreaturesToOtherSquare {
                 for (WildLife unit : square.getWildLifeAtSquare()) {
                     if (unit.getWidthNumber() != square.getSquareNumberWidth() ||
                             unit.getHeightNumber() != square.getSquareNumberHeight() &&
-                                    CheckForMaxNumberAtSquare.check(island.getIslandTerritory()[unit.getWidthNumber()][unit.getHeightNumber()], unit)) {
+                                    CheckForMaxNumberAtSquare.check(unit)) {
                         island.getIslandTerritory()[unit.getWidthNumber()][unit.getHeightNumber()].getWildLifeAtSquare().add(unit);
                         unit.setSquareInfo(square);
                     }

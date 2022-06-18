@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class Breeder {
 
-    public static void letsBreed(Square square, WildLife currentCreature) {
-        ArrayList<WildLife> currentSq = square.getWildLifeAtSquare();
+    public static void letsBreed(WildLife currentCreature) {
+        ArrayList<WildLife> currentSq = currentCreature.getSquareInfo().getWildLifeAtSquare();
         int counter = 0;
         for (WildLife animal : currentSq) {
             if (animal instanceof Animal && animal.getClass().getSimpleName().
@@ -20,11 +20,11 @@ public class Breeder {
                 counter++;
             }
         }
-        if (counter > 2 && CheckForMaxNumberAtSquare.check(square, currentCreature)) {
+        if (counter > 2 && CheckForMaxNumberAtSquare.check(currentCreature)) {
             ListOfAnimalsAndHerbs currentAnimal = ListOfAnimalsAndHerbs.valueOf(currentCreature.getClass().getSimpleName());
             WildLife animalOrHerbs = AnimalAndHerbsFactory.createWildLife(currentAnimal);
             currentSq.add(animalOrHerbs);
-            square.setWildLifeAtSquare(currentSq);
+            currentCreature.getSquareInfo().setWildLifeAtSquare(currentSq);
         }
     }
 

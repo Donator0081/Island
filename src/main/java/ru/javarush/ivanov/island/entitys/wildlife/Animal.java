@@ -16,6 +16,6 @@ public abstract class Animal implements WildLife {
     }
 
     public void breed(){
-        Breeder.letsBreed(squareInfo,this);
+        Breeder.letsBreed(this);
     }
 }
