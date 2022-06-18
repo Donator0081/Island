@@ -18,6 +18,7 @@ public class MoveCreaturesToOtherSquare {
                             unit.getHeightNumber() != square.getSquareNumberHeight() &&
                                     CheckForMaxNumberAtSquare.check(island.getIslandTerritory()[unit.getWidthNumber()][unit.getHeightNumber()], unit)) {
                         island.getIslandTerritory()[unit.getWidthNumber()][unit.getHeightNumber()].getWildLifeAtSquare().add(unit);
+                        unit.setSquareInfo(square);
                     }
                 }
                 ArrayList<WildLife> copy = square.getWildLifeAtSquare();
