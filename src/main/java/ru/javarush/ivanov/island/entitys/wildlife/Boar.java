@@ -5,8 +5,6 @@ import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Boar extends Herbivorous {
     private AnimalParams boarParams = new AnimalParams();
-    private int widthNumber;
-    private int heightNumber;
     Square squareInfo;
 
     public Boar() {
@@ -39,22 +37,6 @@ public class Boar extends Herbivorous {
     @Override
     public AnimalParams getParams() {
         return boarParams;
-    }
-
-    public int getWidthNumber() {
-        return widthNumber;
-    }
-
-    public void setWidthNumber(int widthNumber) {
-        this.widthNumber = widthNumber;
-    }
-
-    public int getHeightNumber() {
-        return heightNumber;
-    }
-
-    public void setHeightNumber(int heightNumber) {
-        this.heightNumber = heightNumber;
     }
 
     @Override

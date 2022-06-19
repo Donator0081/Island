@@ -5,8 +5,6 @@ import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Bear extends Predator {
     private AnimalParams bearParams = new AnimalParams();
-    private int widthNumber;
-    private int heightNumber;
     Square squareInfo;
 
     public Bear() {
@@ -39,23 +37,6 @@ public class Bear extends Predator {
     public AnimalParams getParams() {
         return bearParams;
     }
-
-    public int getWidthNumber() {
-        return widthNumber;
-    }
-
-    public void setWidthNumber(int widthNumber) {
-        this.widthNumber = widthNumber;
-    }
-
-    public int getHeightNumber() {
-        return heightNumber;
-    }
-
-    public void setHeightNumber(int heightNumber) {
-        this.heightNumber = heightNumber;
-    }
-
 
     public Square getSquareInfo() {
         return squareInfo;

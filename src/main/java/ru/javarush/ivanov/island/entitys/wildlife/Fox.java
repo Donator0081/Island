@@ -6,8 +6,6 @@ import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Fox extends Predator implements Eatable {
     private AnimalParams foxParams = new AnimalParams();
-    private int widthNumber;
-    private int heightNumber;
     Square squareInfo;
 
     public Fox() {
@@ -44,22 +42,6 @@ public class Fox extends Predator implements Eatable {
     @Override
     public AnimalParams getParams() {
         return foxParams;
-    }
-
-    public int getWidthNumber() {
-        return widthNumber;
-    }
-
-    public void setWidthNumber(int widthNumber) {
-        this.widthNumber = widthNumber;
-    }
-
-    public int getHeightNumber() {
-        return heightNumber;
-    }
-
-    public void setHeightNumber(int heightNumber) {
-        this.heightNumber = heightNumber;
     }
 
     @Override

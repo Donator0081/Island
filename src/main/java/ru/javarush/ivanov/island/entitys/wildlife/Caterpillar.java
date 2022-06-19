@@ -5,8 +5,6 @@ import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Caterpillar extends Herbivorous {
     private AnimalParams caterpillarParams = new AnimalParams();
-    private int widthNumber;
-    private int heightNumber;
     Square squareInfo;
 
     public Caterpillar() {
@@ -38,22 +36,6 @@ public class Caterpillar extends Herbivorous {
     @Override
     public AnimalParams getParams() {
         return caterpillarParams;
-    }
-
-    public int getWidthNumber() {
-        return widthNumber;
-    }
-
-    public void setWidthNumber(int widthNumber) {
-        this.widthNumber = widthNumber;
-    }
-
-    public int getHeightNumber() {
-        return heightNumber;
-    }
-
-    public void setHeightNumber(int heightNumber) {
-        this.heightNumber = heightNumber;
     }
 
     @Override
