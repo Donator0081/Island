@@ -5,7 +5,7 @@ import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Rabbit extends Herbivorous {
     private AnimalParams rabbitParams = new AnimalParams();
-    Square squareInfo;
+    private Square squareInfo;
 
     public Rabbit() {
         rabbitParams.setWeight(2);

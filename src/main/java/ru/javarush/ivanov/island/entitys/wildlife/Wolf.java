@@ -5,7 +5,7 @@ import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Wolf extends Predator {
     private AnimalParams wolfParams = new AnimalParams();
-    Square squareInfo;
+    private Square squareInfo;
 
     public Wolf() {
         wolfParams.setWeight(50);

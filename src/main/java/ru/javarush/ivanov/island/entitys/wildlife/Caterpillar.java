@@ -5,7 +5,7 @@ import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Caterpillar extends Herbivorous {
     private AnimalParams caterpillarParams = new AnimalParams();
-    Square squareInfo;
+    private Square squareInfo;
 
     public Caterpillar() {
         caterpillarParams.setWeight(0.01);

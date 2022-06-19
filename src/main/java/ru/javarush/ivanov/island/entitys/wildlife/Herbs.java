@@ -6,7 +6,7 @@ import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Herbs implements  WildLife {
     private AnimalParams herbsParams = new AnimalParams();
-    Square squareInfo;
+    private Square squareInfo;
 
     public Herbs() {
         herbsParams.setWeight(1);
