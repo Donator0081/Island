@@ -4,6 +4,7 @@ package main.java.ru.javarush.ivanov.island.entitys.wildlife;
 public abstract class Herbivorous extends Animal {
     @Override
     public void eat() {
+        super.eat();
     }
 
     @Override

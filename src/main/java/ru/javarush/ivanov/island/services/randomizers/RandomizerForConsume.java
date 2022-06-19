@@ -4,8 +4,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomizerForConsume {
     public static boolean getResult(int maxValue) {
-        int rnd = ThreadLocalRandom.current().nextInt(0, 100);
-        return rnd >= maxValue;
+        if (maxValue > 0) {
+            int rnd = ThreadLocalRandom.current().nextInt(0, 100);
+            return rnd >= maxValue;
+        }
+        return false;
     }
 
     private RandomizerForConsume() {
