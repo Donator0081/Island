@@ -1,10 +1,9 @@
 package main.java.ru.javarush.ivanov.island.entitys.wildlife;
 
-import main.java.ru.javarush.ivanov.island.entitys.interfaces.Eatable;
 import main.java.ru.javarush.ivanov.island.entitys.territory.Square;
 import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
-public class Fox extends Predator implements Eatable {
+public class Fox extends Predator {
     private AnimalParams foxParams = new AnimalParams();
     Square squareInfo;
 
@@ -28,11 +27,6 @@ public class Fox extends Predator implements Eatable {
     @Override
     public void breed() {
         super.breed();
-    }
-
-    @Override
-    public void getEaten() {
-
     }
 
     public void setFoxParams(AnimalParams foxParams) {
