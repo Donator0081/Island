@@ -1,7 +1,7 @@
 package main.java.ru.javarush.ivanov.island.services.territory_services;
 
-import main.java.ru.javarush.ivanov.island.entitys.territory.Square;
-import main.java.ru.javarush.ivanov.island.entitys.interfaces.WildLife;
+import main.java.ru.javarush.ivanov.island.entities.territory.Square;
+import main.java.ru.javarush.ivanov.island.entities.interfaces.WildLife;
 import main.java.ru.javarush.ivanov.island.variables.island_params.IslandWidthAndHeight;
 
 public class IslandFiller {

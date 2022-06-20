@@ -29,7 +29,7 @@ public class BuffaloChanceToConsumeList extends ChanceToConsumeList {
     public BuffaloChanceToConsumeList() {
     }
 
-    public  Map<String, Integer> getList() {
+    public Map<String, Integer> getList() {
         return chanceToConsume;
     }
 

@@ -29,7 +29,7 @@ public class HawkChanceToConsumeList extends ChanceToConsumeList {
     public HawkChanceToConsumeList() {
     }
 
-    public  Map<String, Integer> getList() {
+    public Map<String, Integer> getList() {
         return chanceToConsume;
     }
 

@@ -1,7 +1,7 @@
 package main.java.ru.javarush.ivanov.island.services.territory_services;
 
 import main.java.ru.javarush.ivanov.island.services.AnimalAndHerbsFactory;
-import main.java.ru.javarush.ivanov.island.entitys.interfaces.WildLife;
+import main.java.ru.javarush.ivanov.island.entities.interfaces.WildLife;
 import main.java.ru.javarush.ivanov.island.services.randomizers.RandomizerForAnimalsPerSquare;
 import main.java.ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 

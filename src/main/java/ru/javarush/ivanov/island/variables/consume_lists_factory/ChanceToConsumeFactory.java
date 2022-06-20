@@ -3,7 +3,7 @@ package main.java.ru.javarush.ivanov.island.variables.consume_lists_factory;
 import main.java.ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 
 public final class ChanceToConsumeFactory {
-    public static ChanceToConsumeList createConsumeList(ListOfAnimalsAndHerbs listOfAnimalsAndHerbs){
+    public static ChanceToConsumeList createConsumeList(ListOfAnimalsAndHerbs listOfAnimalsAndHerbs) {
         return switch (listOfAnimalsAndHerbs) {
             case BEAR -> new BearChanceToConsumeList();
             case BOAR -> new BoarChanceToConsumeList();

@@ -1,6 +1,6 @@
 package main.java.ru.javarush.ivanov.island.services.move_services;
 
-import main.java.ru.javarush.ivanov.island.entitys.interfaces.WildLife;
+import main.java.ru.javarush.ivanov.island.entities.interfaces.WildLife;
 import main.java.ru.javarush.ivanov.island.services.randomizers.RandomizerForMoveLength;
 import main.java.ru.javarush.ivanov.island.variables.Constants;
 import main.java.ru.javarush.ivanov.island.variables.island_params.IslandWidthAndHeight;

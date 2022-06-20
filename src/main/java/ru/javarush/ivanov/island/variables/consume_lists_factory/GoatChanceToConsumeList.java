@@ -29,7 +29,7 @@ public class GoatChanceToConsumeList extends ChanceToConsumeList {
     public GoatChanceToConsumeList() {
     }
 
-    public  Map<String, Integer> getList() {
+    public Map<String, Integer> getList() {
         return chanceToConsume;
     }
 }

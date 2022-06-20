@@ -29,7 +29,7 @@ public class RabbitChanceToConsumeList extends ChanceToConsumeList {
     public RabbitChanceToConsumeList() {
     }
 
-    public  Map<String, Integer> getList() {
+    public Map<String, Integer> getList() {
         return chanceToConsume;
     }
 }

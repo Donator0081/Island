@@ -29,7 +29,7 @@ public class WolfChanceToConsumeList extends ChanceToConsumeList {
     public WolfChanceToConsumeList() {
     }
 
-    public  Map<String, Integer> getList() {
+    public Map<String, Integer> getList() {
         return chanceToConsume;
     }
 
