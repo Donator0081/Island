@@ -1,4 +1,4 @@
-package main.java.ru.javarush.ivanov.island.entities.wildlife;
+package ru.javarush.ivanov.island.entities.wildlife;
 
 public abstract class Predator extends Animal {
     @Override

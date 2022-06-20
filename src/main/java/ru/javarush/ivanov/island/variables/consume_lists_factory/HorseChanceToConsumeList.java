@@ -1,4 +1,4 @@
-package main.java.ru.javarush.ivanov.island.variables.consume_lists_factory;
+package ru.javarush.ivanov.island.variables.consume_lists_factory;
 
 import java.util.HashMap;
 import java.util.Map;

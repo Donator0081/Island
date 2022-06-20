@@ -1,10 +1,10 @@
-package main.java.ru.javarush.ivanov.island.services.breed_services;
+package ru.javarush.ivanov.island.services.breed_services;
 
-import main.java.ru.javarush.ivanov.island.entities.interfaces.WildLife;
-import main.java.ru.javarush.ivanov.island.entities.wildlife.Animal;
-import main.java.ru.javarush.ivanov.island.services.AnimalAndHerbsFactory;
-import main.java.ru.javarush.ivanov.island.services.move_services.CheckForMaxNumberAtSquare;
-import main.java.ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
+import ru.javarush.ivanov.island.entities.interfaces.WildLife;
+import ru.javarush.ivanov.island.entities.wildlife.Animal;
+import ru.javarush.ivanov.island.services.AnimalAndHerbsFactory;
+import ru.javarush.ivanov.island.services.move_services.CheckForMaxNumberAtSquare;
+import ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package main.java.ru.javarush.ivanov.island.variables.animal_params;
+package ru.javarush.ivanov.island.variables.animal_params;
 
 public class AnimalParams {
     private double weight;

@@ -1,6 +1,6 @@
-package main.java.ru.javarush.ivanov.island.services.eat_services;
+package ru.javarush.ivanov.island.services.eat_services;
 
-import main.java.ru.javarush.ivanov.island.entities.interfaces.WildLife;
+import ru.javarush.ivanov.island.entities.interfaces.WildLife;
 
 public class CheckAmountOfConsumption {
     public static boolean enoughFood(WildLife eater, WildLife victim) {

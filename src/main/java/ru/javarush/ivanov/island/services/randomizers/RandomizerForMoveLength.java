@@ -1,4 +1,4 @@
-package main.java.ru.javarush.ivanov.island.services.randomizers;
+package ru.javarush.ivanov.island.services.randomizers;
 
 import java.util.concurrent.ThreadLocalRandom;
 

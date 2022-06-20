@@ -1,6 +1,6 @@
-package main.java.ru.javarush.ivanov.island.services.move_services;
+package ru.javarush.ivanov.island.services.move_services;
 
-import main.java.ru.javarush.ivanov.island.entities.interfaces.WildLife;
+import ru.javarush.ivanov.island.entities.interfaces.WildLife;
 
 public class CheckForMaxNumberAtSquare {
 

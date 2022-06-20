@@ -1,4 +1,4 @@
-package main.java.ru.javarush.ivanov.island.variables;
+package ru.javarush.ivanov.island.variables;
 
 public enum ListOfAnimalsAndHerbs {
     BEAR("Bear"),

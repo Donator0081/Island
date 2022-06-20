@@ -1,4 +1,4 @@
-package main.java.ru.javarush.ivanov.island.entities.territory;
+package ru.javarush.ivanov.island.entities.territory;
 
 public class Island {
     private Square[][] islandTerritory;

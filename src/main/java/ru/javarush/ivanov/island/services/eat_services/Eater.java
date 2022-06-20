@@ -1,9 +1,9 @@
-package main.java.ru.javarush.ivanov.island.services.eat_services;
+package ru.javarush.ivanov.island.services.eat_services;
 
-import main.java.ru.javarush.ivanov.island.entities.interfaces.WildLife;
-import main.java.ru.javarush.ivanov.island.entities.territory.Square;
-import main.java.ru.javarush.ivanov.island.services.randomizers.RandomizerForConsume;
-import main.java.ru.javarush.ivanov.island.variables.Constants;
+import ru.javarush.ivanov.island.entities.interfaces.WildLife;
+import ru.javarush.ivanov.island.entities.territory.Square;
+import ru.javarush.ivanov.island.services.randomizers.RandomizerForConsume;
+import ru.javarush.ivanov.island.variables.Constants;
 
 import java.util.ArrayList;
 

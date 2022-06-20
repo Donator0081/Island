@@ -1,8 +1,8 @@
-package main.java.ru.javarush.ivanov.island.services;
+package ru.javarush.ivanov.island.services;
 
-import main.java.ru.javarush.ivanov.island.entities.interfaces.WildLife;
-import main.java.ru.javarush.ivanov.island.entities.wildlife.*;
-import main.java.ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
+import ru.javarush.ivanov.island.entities.interfaces.WildLife;
+import ru.javarush.ivanov.island.entities.wildlife.*;
+import ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 
 public class AnimalAndHerbsFactory {
     public static WildLife createWildLife(ListOfAnimalsAndHerbs listOfAnimalsAndHerbs) {

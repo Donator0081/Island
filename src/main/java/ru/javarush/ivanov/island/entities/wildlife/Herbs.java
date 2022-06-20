@@ -1,8 +1,8 @@
-package main.java.ru.javarush.ivanov.island.entities.wildlife;
+package ru.javarush.ivanov.island.entities.wildlife;
 
-import main.java.ru.javarush.ivanov.island.entities.interfaces.WildLife;
-import main.java.ru.javarush.ivanov.island.entities.territory.Square;
-import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
+import ru.javarush.ivanov.island.entities.interfaces.WildLife;
+import ru.javarush.ivanov.island.entities.territory.Square;
+import ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Herbs implements WildLife {
     private AnimalParams herbsParams = new AnimalParams();

@@ -1,9 +1,9 @@
-package main.java.ru.javarush.ivanov.island.services.move_services;
+package ru.javarush.ivanov.island.services.move_services;
 
-import main.java.ru.javarush.ivanov.island.entities.interfaces.WildLife;
-import main.java.ru.javarush.ivanov.island.services.randomizers.RandomizerForMoveLength;
-import main.java.ru.javarush.ivanov.island.variables.Constants;
-import main.java.ru.javarush.ivanov.island.variables.island_params.IslandWidthAndHeight;
+import ru.javarush.ivanov.island.entities.interfaces.WildLife;
+import ru.javarush.ivanov.island.services.randomizers.RandomizerForMoveLength;
+import ru.javarush.ivanov.island.variables.Constants;
+import ru.javarush.ivanov.island.variables.island_params.IslandWidthAndHeight;
 
 public class MoveToOtherSquare {
     public static void moveToOtherSquare(WildLife currentUnit, int direction) {

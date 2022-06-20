@@ -11,6 +11,8 @@ module ru.javarush.ivanov.island {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
+    exports ru.javarush.ivanov.island.controllers;
+    opens ru.javarush.ivanov.island.controllers to javafx.fxml;
     exports ru.javarush.ivanov.island;
     opens ru.javarush.ivanov.island to javafx.fxml;
 }

@@ -1,4 +1,4 @@
-package main.java.ru.javarush.ivanov.island.variables.island_params;
+package ru.javarush.ivanov.island.variables.island_params;
 
 public class IslandWidthAndHeight {
     private static int width = 100;

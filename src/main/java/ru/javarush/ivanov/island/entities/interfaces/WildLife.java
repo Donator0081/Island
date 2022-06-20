@@ -1,7 +1,7 @@
-package main.java.ru.javarush.ivanov.island.entities.interfaces;
+package ru.javarush.ivanov.island.entities.interfaces;
 
-import main.java.ru.javarush.ivanov.island.entities.territory.Square;
-import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
+import ru.javarush.ivanov.island.entities.territory.Square;
+import ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public interface WildLife {
 

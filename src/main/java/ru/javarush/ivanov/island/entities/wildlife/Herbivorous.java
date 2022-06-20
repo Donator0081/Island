@@ -1,4 +1,4 @@
-package main.java.ru.javarush.ivanov.island.entities.wildlife;
+package ru.javarush.ivanov.island.entities.wildlife;
 
 
 public abstract class Herbivorous extends Animal {

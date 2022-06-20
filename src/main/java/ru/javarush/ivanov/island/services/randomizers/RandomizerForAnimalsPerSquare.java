@@ -1,6 +1,6 @@
-package main.java.ru.javarush.ivanov.island.services.randomizers;
+package ru.javarush.ivanov.island.services.randomizers;
 
-import main.java.ru.javarush.ivanov.island.entities.interfaces.WildLife;
+import ru.javarush.ivanov.island.entities.interfaces.WildLife;
 
 import java.util.concurrent.ThreadLocalRandom;
 

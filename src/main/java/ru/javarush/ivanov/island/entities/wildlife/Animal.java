@@ -1,14 +1,14 @@
-package main.java.ru.javarush.ivanov.island.entities.wildlife;
+package ru.javarush.ivanov.island.entities.wildlife;
 
 
-import main.java.ru.javarush.ivanov.island.entities.interfaces.WildLife;
-import main.java.ru.javarush.ivanov.island.entities.territory.Square;
-import main.java.ru.javarush.ivanov.island.services.breed_services.Breeder;
-import main.java.ru.javarush.ivanov.island.services.eat_services.Eater;
-import main.java.ru.javarush.ivanov.island.services.move_services.MoveToOtherSquare;
-import main.java.ru.javarush.ivanov.island.services.randomizers.RandomizerForMoveDirection;
-import main.java.ru.javarush.ivanov.island.variables.Constants;
-import main.java.ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
+import ru.javarush.ivanov.island.entities.interfaces.WildLife;
+import ru.javarush.ivanov.island.entities.territory.Square;
+import ru.javarush.ivanov.island.services.breed_services.Breeder;
+import ru.javarush.ivanov.island.services.eat_services.Eater;
+import ru.javarush.ivanov.island.services.move_services.MoveToOtherSquare;
+import ru.javarush.ivanov.island.services.randomizers.RandomizerForMoveDirection;
+import ru.javarush.ivanov.island.variables.Constants;
+import ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public abstract class Animal implements WildLife {
     Square squareInfo;
