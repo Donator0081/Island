@@ -10,29 +10,28 @@ import ru.javarush.ivanov.island.services.randomizers.RandomizerForMoveDirection
 import ru.javarush.ivanov.island.variables.Constants;
 import ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
-public abstract class Animal implements WildLife {
+public abstract class Animal implements WildLife{
     Square squareInfo;
     AnimalParams animalParams;
 
     public void eat() {
         if (Eater.letsEat(this)) {
-            animalParams.setTurnsToDeath(2);
+            this.getParams().setTurnsToDeath(2);
+        } else if (this.getParams().getTurnsToDeath() <= 0 && this.getSquareInfo() != null) {
+            Constants.ISLAND.getIslandTerritory()[this.getSquareInfo().getSquareNumberWidth()]
+                    [this.getSquareInfo().getSquareNumberHeight()].getWildLifeAtSquare().remove(this);
+            this.setSquareInfo(null);
         } else {
-            animalParams.setTurnsToDeath(animalParams.getTurnsToDeath() - 1);
-            if (animalParams.getTurnsToDeath() < 0) {
-                Constants.ISLAND.getIslandTerritory()[this.getSquareInfo().getSquareNumberWidth()]
-                        [this.getSquareInfo().getSquareNumberHeight()].getWildLifeAtSquare().remove(this);
-                this.setSquareInfo(null);
-            }
+            this.getParams().setTurnsToDeath(this.getParams().getTurnsToDeath() - 1);
         }
-
     }
 
     public void move() {
         MoveToOtherSquare.moveToOtherSquare(this, RandomizerForMoveDirection.getResult());
     }
 
-    public void breed() {
-        Breeder.letsBreed(this);
+    public WildLife breed() {
+        return Breeder.letsBreed(this);
     }
+
 }

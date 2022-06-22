@@ -4,8 +4,11 @@ import ru.javarush.ivanov.island.entities.interfaces.WildLife;
 
 public class CheckAmountOfConsumption {
     public static boolean enoughFood(WildLife eater, WildLife victim) {
-        double foodNeeded = eater.getParams().getAmountOfFoodForSatiety();
-        double foodFromVictim = victim.getParams().getWeight();
-        return foodNeeded >= foodFromVictim;
+        if (victim != null) {
+            double foodNeeded = eater.getParams().getAmountOfFoodForSatiety();
+            double foodFromVictim = victim.getParams().getWeight();
+            return foodNeeded >= foodFromVictim;
+        }
+        return false;
     }
 }

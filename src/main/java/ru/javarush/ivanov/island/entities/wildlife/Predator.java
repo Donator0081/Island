@@ -1,5 +1,7 @@
 package ru.javarush.ivanov.island.entities.wildlife;
 
+import ru.javarush.ivanov.island.entities.interfaces.WildLife;
+
 public abstract class Predator extends Animal {
     @Override
     public void eat() {
@@ -12,7 +14,7 @@ public abstract class Predator extends Animal {
     }
 
     @Override
-    public void breed() {
-        super.breed();
+    public WildLife breed() {
+        return super.breed();
     }
 }

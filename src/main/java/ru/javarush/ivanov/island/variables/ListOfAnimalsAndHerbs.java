@@ -18,9 +18,13 @@ public enum ListOfAnimalsAndHerbs {
     SNAKE("Snake"),
     WOLF("Wolf");
 
-    String currency;
+    final String currency;
 
     ListOfAnimalsAndHerbs(String currency) {
         this.currency = currency;
+    }
+
+    public String getCurrency() {
+        return currency;
     }
 }

@@ -1,33 +1,26 @@
 package ru.javarush.ivanov.island;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import ru.javarush.ivanov.island.entities.interfaces.WildLife;
+import ru.javarush.ivanov.island.entities.territory.Square;
+import ru.javarush.ivanov.island.entities.wildlife.Animal;
+import ru.javarush.ivanov.island.services.StatusUpdater;
+import ru.javarush.ivanov.island.services.territory_services.IslandBuilder;
+import ru.javarush.ivanov.island.services.territory_services.Statistic;
+import ru.javarush.ivanov.island.variables.Constants;
 
-import java.io.IOException;
-import java.util.Objects;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-public class Application extends javafx.application.Application {
+public class Application {
+    private static final ExecutorService EXECUTOR = Executors.newScheduledThreadPool(3);
 
     public static void main(String[] args) {
-        launch();
-    }
-    @Override
-    public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("MainView.fxml")));
-        Scene scene = new Scene(root);
-        scene.setFill(Color.TRANSPARENT);
-        stage.initStyle(StageStyle.TRANSPARENT);
-        root.setOnMousePressed(pressEvent -> {
-            root.setOnMouseDragged(dragEvent -> {
-                stage.setX(dragEvent.getScreenX() - pressEvent.getSceneX());
-                stage.setY(dragEvent.getScreenY() - pressEvent.getSceneY());
-            });
-        });
-        stage.setScene(scene);
-        stage.show();
+        IslandBuilder islandBuilder = new IslandBuilder();
+        Statistic statistic = new Statistic();
+        StatusUpdater statusUpdater = new StatusUpdater();
+        EXECUTOR.execute(islandBuilder);
+        EXECUTOR.execute(statistic);
+        EXECUTOR.execute(statusUpdater);
+        System.out.println("-------------------------------");
     }
 }

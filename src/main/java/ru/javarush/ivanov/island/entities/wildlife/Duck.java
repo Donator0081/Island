@@ -1,5 +1,6 @@
 package ru.javarush.ivanov.island.entities.wildlife;
 
+import ru.javarush.ivanov.island.entities.interfaces.WildLife;
 import ru.javarush.ivanov.island.entities.territory.Square;
 import ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
@@ -25,8 +26,8 @@ public class Duck extends Herbivorous {
     }
 
     @Override
-    public void breed() {
-        super.breed();
+    public WildLife breed() {
+        return super.breed();
     }
 
     public void setDuckParams(AnimalParams duckParams) {

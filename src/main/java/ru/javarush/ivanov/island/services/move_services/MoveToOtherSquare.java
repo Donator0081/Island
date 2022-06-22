@@ -1,61 +1,66 @@
 package ru.javarush.ivanov.island.services.move_services;
 
+import org.jetbrains.annotations.NotNull;
 import ru.javarush.ivanov.island.entities.interfaces.WildLife;
+import ru.javarush.ivanov.island.entities.territory.Square;
 import ru.javarush.ivanov.island.services.randomizers.RandomizerForMoveLength;
 import ru.javarush.ivanov.island.variables.Constants;
 import ru.javarush.ivanov.island.variables.island_params.IslandWidthAndHeight;
 
 public class MoveToOtherSquare {
-    public static void moveToOtherSquare(WildLife currentUnit, int direction) {
+    public static void moveToOtherSquare(@NotNull WildLife currentUnit, int direction) {
         int rnd = RandomizerForMoveLength.getResult(currentUnit.getParams().getSpeed());
-        switch (direction) {
-            case 1:
-                int changedPosition = currentUnit.getSquareInfo().getSquareNumberHeight() - rnd;
-                if (changedPosition >= 0) {
-                    Constants.ISLAND.getIslandTerritory()[currentUnit.getSquareInfo().getSquareNumberWidth()]
-                            [changedPosition].getWildLifeAtSquare().add(currentUnit);
-                    Constants.ISLAND.getIslandTerritory()[currentUnit.getSquareInfo().getSquareNumberWidth()]
-                            [currentUnit.getSquareInfo().getSquareNumberHeight()].getWildLifeAtSquare().remove(currentUnit);
-                    currentUnit.setSquareInfo(Constants.ISLAND.getIslandTerritory()[currentUnit.getSquareInfo().getSquareNumberWidth()]
-                            [changedPosition]);
-                }
-                break;
+        Square square = currentUnit.getSquareInfo();
+        if (square != null) {
+            switch (direction) {
+                case 1:
+                    int changedPosition = square.getSquareNumberHeight() - rnd;
+                    if (changedPosition >= 0) {
+                        Constants.ISLAND.getIslandTerritory()[square.getSquareNumberWidth()]
+                                [changedPosition].getWildLifeAtSquare().add(currentUnit);
+                        Constants.ISLAND.getIslandTerritory()[square.getSquareNumberWidth()]
+                                [square.getSquareNumberHeight()].getWildLifeAtSquare().remove(currentUnit);
+                        currentUnit.setSquareInfo(Constants.ISLAND.getIslandTerritory()[square.getSquareNumberWidth()]
+                                [changedPosition]);
+                    }
+                    break;
 
-            case 2:
-                changedPosition = currentUnit.getSquareInfo().getSquareNumberWidth() + rnd;
-                if (changedPosition < IslandWidthAndHeight.getWidth()) {
-                    Constants.ISLAND.getIslandTerritory()[changedPosition]
-                            [currentUnit.getSquareInfo().getSquareNumberHeight()].getWildLifeAtSquare().add(currentUnit);
-                    Constants.ISLAND.getIslandTerritory()[currentUnit.getSquareInfo().getSquareNumberWidth()]
-                            [currentUnit.getSquareInfo().getSquareNumberHeight()].getWildLifeAtSquare().remove(currentUnit);
-                    currentUnit.setSquareInfo(Constants.ISLAND.getIslandTerritory()[changedPosition]
-                            [currentUnit.getSquareInfo().getSquareNumberHeight()]);
-                }
-                break;
+                case 2:
+                    changedPosition = square.getSquareNumberWidth() + rnd;
+                    if (changedPosition < IslandWidthAndHeight.getWidth()) {
+                        Constants.ISLAND.getIslandTerritory()[changedPosition]
+                                [square.getSquareNumberHeight()].getWildLifeAtSquare().add(currentUnit);
+                        Constants.ISLAND.getIslandTerritory()[square.getSquareNumberWidth()]
+                                [square.getSquareNumberHeight()].getWildLifeAtSquare().remove(currentUnit);
+                        currentUnit.setSquareInfo(Constants.ISLAND.getIslandTerritory()[changedPosition]
+                                [square.getSquareNumberHeight()]);
+                    }
+                    break;
 
-            case 3:
-                changedPosition = currentUnit.getSquareInfo().getSquareNumberHeight() + rnd;
-                if (changedPosition < IslandWidthAndHeight.getHeight()) {
-                    Constants.ISLAND.getIslandTerritory()[currentUnit.getSquareInfo().getSquareNumberWidth()]
-                            [changedPosition].getWildLifeAtSquare().add(currentUnit);
-                    Constants.ISLAND.getIslandTerritory()[currentUnit.getSquareInfo().getSquareNumberWidth()]
-                            [currentUnit.getSquareInfo().getSquareNumberHeight()].getWildLifeAtSquare().remove(currentUnit);
-                    currentUnit.setSquareInfo(Constants.ISLAND.getIslandTerritory()[currentUnit.getSquareInfo().getSquareNumberWidth()]
-                            [changedPosition]);
-                }
-                break;
+                case 3:
+                    changedPosition = square.getSquareNumberHeight() + rnd;
+                    if (changedPosition < IslandWidthAndHeight.getHeight()) {
+                        Constants.ISLAND.getIslandTerritory()[square.getSquareNumberWidth()]
+                                [changedPosition].getWildLifeAtSquare().add(currentUnit);
+                        Constants.ISLAND.getIslandTerritory()[square.getSquareNumberWidth()]
+                                [square.getSquareNumberHeight()].getWildLifeAtSquare().remove(currentUnit);
+                        currentUnit.setSquareInfo(Constants.ISLAND.getIslandTerritory()[square.getSquareNumberWidth()]
+                                [changedPosition]);
+                    }
+                    break;
 
-            case 4:
-                changedPosition = currentUnit.getSquareInfo().getSquareNumberWidth() - rnd;
-                if (changedPosition >= 0) {
-                    Constants.ISLAND.getIslandTerritory()[changedPosition]
-                            [currentUnit.getSquareInfo().getSquareNumberHeight()].getWildLifeAtSquare().add(currentUnit);
-                    Constants.ISLAND.getIslandTerritory()[currentUnit.getSquareInfo().getSquareNumberWidth()]
-                            [currentUnit.getSquareInfo().getSquareNumberHeight()].getWildLifeAtSquare().remove(currentUnit);
-                    currentUnit.setSquareInfo(Constants.ISLAND.getIslandTerritory()[changedPosition]
-                            [currentUnit.getSquareInfo().getSquareNumberHeight()]);
-                }
-                break;
+                case 4:
+                    changedPosition = square.getSquareNumberWidth() - rnd;
+                    if (changedPosition >= 0) {
+                        Constants.ISLAND.getIslandTerritory()[changedPosition]
+                                [square.getSquareNumberHeight()].getWildLifeAtSquare().add(currentUnit);
+                        Constants.ISLAND.getIslandTerritory()[square.getSquareNumberWidth()]
+                                [square.getSquareNumberHeight()].getWildLifeAtSquare().remove(currentUnit);
+                        currentUnit.setSquareInfo(Constants.ISLAND.getIslandTerritory()[changedPosition]
+                                [square.getSquareNumberHeight()]);
+                    }
+                    break;
+            }
         }
     }
 }
