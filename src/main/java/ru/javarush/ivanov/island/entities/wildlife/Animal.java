@@ -13,7 +13,7 @@ import ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 import java.util.ArrayList;
 
 public abstract class Animal implements WildLife{
-    Square squareInfo;
+    volatile Square squareInfo;
     AnimalParams animalParams;
 
     public void eat() {

@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
 
 public class Square{
 
-    private volatile ArrayList<WildLife> wildLifeAtSquare;
+    private  volatile ArrayList<WildLife> wildLifeAtSquare;
     private int squareNumberWidth;
     private int squareNumberHeight;
 

@@ -23,14 +23,14 @@ public class Runner extends Thread {
         Statistic statistic = new Statistic();
         executor.submit(islandBuilder);
         while (true) {
-            executor.execute(statistic);
+            executor.submit(statistic);
             for (int i = 0; i < IslandWidthAndHeight.getWidth(); i++) {
                 for (int j = 0; j < IslandWidthAndHeight.getHeight(); j++) {
                     Square square = Constants.ISLAND.getIslandTerritory()[i][j];
                     ArrayList<WildLife> squareList = square.getWildLifeAtSquare();
                     ArrayList<WildLife> tempList = new ArrayList<>(squareList);
                     for (WildLife currentCreature : tempList) {
-                        if (!currentCreature.getClass().equals(Herbs.class)) {
+                        if (currentCreature!=null&&!currentCreature.getClass().equals(Herbs.class)) {
                             Animal animal = (Animal) currentCreature;
                             AnimalThread animalThread = new AnimalThread(animal);
                             executorForAnimal.submit(animalThread);

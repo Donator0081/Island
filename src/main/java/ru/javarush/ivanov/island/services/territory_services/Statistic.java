@@ -37,9 +37,9 @@ public class Statistic implements Runnable {
     @Override
     public void run() {
         giveMeStatistic();
+        notifyAll();
     }
 
     public Statistic() {
-        new Thread(this);
     }
 }
