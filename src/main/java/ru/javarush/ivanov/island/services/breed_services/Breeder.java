@@ -1,6 +1,5 @@
 package ru.javarush.ivanov.island.services.breed_services;
 
-import org.jetbrains.annotations.NotNull;
 import ru.javarush.ivanov.island.entities.interfaces.WildLife;
 import ru.javarush.ivanov.island.entities.territory.Square;
 import ru.javarush.ivanov.island.entities.wildlife.Animal;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 
 public class Breeder {
 
-    public static WildLife letsBreed(@NotNull WildLife currentCreature) {
+    public synchronized static WildLife letsBreed( WildLife currentCreature) {
         Square square = currentCreature.getSquareInfo();
         WildLife animalOrHerbs = null;
         if (square != null) {
@@ -27,6 +26,7 @@ public class Breeder {
             if (counter >= 2 && CheckForMaxNumberAtSquare.check(currentCreature)) {
                 ListOfAnimalsAndHerbs currentAnimal = ListOfAnimalsAndHerbs.valueOf(currentCreature.getClass().getSimpleName().toUpperCase());
                 animalOrHerbs = AnimalAndHerbsFactory.createWildLife(currentAnimal);
+                square.add(animalOrHerbs);
             }
         }
         return animalOrHerbs;

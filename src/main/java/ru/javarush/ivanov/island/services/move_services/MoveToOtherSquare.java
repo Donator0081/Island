@@ -1,6 +1,5 @@
 package ru.javarush.ivanov.island.services.move_services;
 
-import org.jetbrains.annotations.NotNull;
 import ru.javarush.ivanov.island.entities.interfaces.WildLife;
 import ru.javarush.ivanov.island.entities.territory.Square;
 import ru.javarush.ivanov.island.services.randomizers.RandomizerForMoveLength;
@@ -8,7 +7,7 @@ import ru.javarush.ivanov.island.variables.Constants;
 import ru.javarush.ivanov.island.variables.island_params.IslandWidthAndHeight;
 
 public class MoveToOtherSquare {
-    public static void moveToOtherSquare(@NotNull WildLife currentUnit, int direction) {
+    public static void moveToOtherSquare(WildLife currentUnit, int direction) {
         int rnd = RandomizerForMoveLength.getResult(currentUnit.getParams().getSpeed());
         Square square = currentUnit.getSquareInfo();
         if (square != null) {

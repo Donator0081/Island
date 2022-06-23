@@ -20,6 +20,5 @@ public class IslandBuilder implements Runnable {
     }
 
     public IslandBuilder() {
-        new Thread(this);
     }
 }

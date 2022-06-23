@@ -3,7 +3,7 @@ package ru.javarush.ivanov.island.services.randomizers;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomizerForConsume {
-    public static boolean getResult(int maxValue) {
+    public synchronized static boolean getResult(int maxValue) {
         if (maxValue==100){
             return true;
         }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class CheckForMaxNumberAtSquare {
 
-    public static boolean check(WildLife wildLife) {
+    public synchronized static boolean check(WildLife wildLife) {
         boolean result = false;
         int maxNumberAtSquare = wildLife.getParams().getMaxNumberPerSquare();
         ArrayList<WildLife> wildLifeArrayList = new ArrayList<>(wildLife.getSquareInfo().getWildLifeAtSquare());

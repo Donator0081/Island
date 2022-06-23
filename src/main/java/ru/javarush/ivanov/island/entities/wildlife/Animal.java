@@ -10,6 +10,8 @@ import ru.javarush.ivanov.island.services.randomizers.RandomizerForMoveDirection
 import ru.javarush.ivanov.island.variables.Constants;
 import ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
+import java.util.ArrayList;
+
 public abstract class Animal implements WildLife{
     Square squareInfo;
     AnimalParams animalParams;
@@ -33,5 +35,6 @@ public abstract class Animal implements WildLife{
     public WildLife breed() {
         return Breeder.letsBreed(this);
     }
+
 
 }
