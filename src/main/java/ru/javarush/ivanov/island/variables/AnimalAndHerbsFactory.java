@@ -1,11 +1,10 @@
-package ru.javarush.ivanov.island.services;
+package ru.javarush.ivanov.island.variables;
 
-import ru.javarush.ivanov.island.entities.interfaces.WildLife;
+
 import ru.javarush.ivanov.island.entities.wildlife.*;
-import ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 
 public class AnimalAndHerbsFactory {
-    public static WildLife createWildLife(ListOfAnimalsAndHerbs listOfAnimalsAndHerbs) {
+    public static Creature createWildLife(ListOfAnimalsAndHerbs listOfAnimalsAndHerbs) {
         return switch (listOfAnimalsAndHerbs) {
             case BEAR -> new Bear();
             case BOAR -> new Boar();

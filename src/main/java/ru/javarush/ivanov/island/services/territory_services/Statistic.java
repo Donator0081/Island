@@ -1,45 +1,29 @@
 package ru.javarush.ivanov.island.services.territory_services;
 
 import ru.javarush.ivanov.island.entities.interfaces.WildLife;
+import ru.javarush.ivanov.island.entities.wildlife.Creature;
 import ru.javarush.ivanov.island.variables.Constants;
 import ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 import ru.javarush.ivanov.island.variables.island_params.IslandWidthAndHeight;
 
 import java.util.*;
 
-public class Statistic implements Runnable {
+public class Statistic {
 
-    private static void giveMeStatistic() {
-        HashMap<String, Integer> creaturesPerSquare = new HashMap<>();
-        for (ListOfAnimalsAndHerbs unit : ListOfAnimalsAndHerbs.values()) {
-            creaturesPerSquare.put(unit.getCurrency(), 0);
-        }
+    public void giveMeStatistic() {
         for (int i = 0; i < IslandWidthAndHeight.getWidth(); i++) {
             for (int j = 0; j < IslandWidthAndHeight.getHeight(); j++) {
-                ArrayList<WildLife> wildLifeArrayList = new ArrayList<>(Constants.ISLAND.getIslandTerritory()[i][j].getWildLifeAtSquare());
-                for (WildLife currentCreature : wildLifeArrayList) {
-                    if (currentCreature != null) {
-                        String key = currentCreature.getClass().getSimpleName();
-                        if (creaturesPerSquare.containsKey(key)) {
-                            creaturesPerSquare.put(key, creaturesPerSquare.get(key) + 1);
-                        }
-                    }
-                }
+                HashMap<String, Set<Creature>> creaturesPerSquare = new HashMap<>(Constants.ISLAND.getIslandTerritory()[i][j].getResidents());
                 System.out.println("WildLife at square " + i + " " + j);
-                for (Map.Entry<String, Integer> mapUnit : creaturesPerSquare.entrySet()) {
-                    System.out.println(mapUnit.getKey() + " : " + mapUnit.getValue());
-                    mapUnit.setValue(0);
+                for (String type : ListOfAnimalsAndHerbs.getCurrencies()) {
+                    Set<Creature> tempSet = creaturesPerSquare.get(type);
+                    System.out.println(type + " : " + tempSet.size());
                 }
             }
         }
     }
 
-    @Override
-    public void run() {
-        giveMeStatistic();
-        notifyAll();
-    }
-
     public Statistic() {
     }
 }
+

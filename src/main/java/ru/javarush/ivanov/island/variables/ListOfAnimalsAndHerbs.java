@@ -1,5 +1,10 @@
 package ru.javarush.ivanov.island.variables;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public enum ListOfAnimalsAndHerbs {
     BEAR("Bear"),
     BOAR("Boar"),
@@ -26,5 +31,11 @@ public enum ListOfAnimalsAndHerbs {
 
     public String getCurrency() {
         return currency;
+    }
+
+    public static Set<String> getCurrencies() {
+        Set<String> result = new HashSet<>();
+        List.of(ListOfAnimalsAndHerbs.values()).forEach(o -> result.add(o.currency));
+        return result;
     }
 }

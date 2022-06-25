@@ -1,10 +1,15 @@
 package ru.javarush.ivanov.island.entities.wildlife;
 
+import ru.javarush.ivanov.island.entities.interfaces.Breedable;
 import ru.javarush.ivanov.island.entities.interfaces.WildLife;
 import ru.javarush.ivanov.island.entities.territory.Square;
+import ru.javarush.ivanov.island.variables.AnimalAndHerbsFactory;
+import ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 import ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
-public class Herbs implements WildLife {
+import java.util.Set;
+
+public class Herbs extends Creature implements WildLife {
     private AnimalParams herbsParams = new AnimalParams();
     private Square squareInfo;
 
@@ -32,5 +37,24 @@ public class Herbs implements WildLife {
     @Override
     public void setSquareInfo(Square squareInfo) {
         this.squareInfo = squareInfo;
+    }
+
+    @Override
+    public boolean breed(Square square) {
+        return safeBreed(square);
+    }
+
+    private boolean safeBreed(Square square) {
+        square.getLock().lock();
+        try {
+            Set<Creature> herbs = square.getResidents().get(getType());
+            if (herbs.size() > 2) {
+                herbs.add(AnimalAndHerbsFactory.createWildLife(ListOfAnimalsAndHerbs.valueOf(this.getClass().getSimpleName().toUpperCase())));
+                return true;
+            }
+        } finally {
+            square.getLock().unlock();
+        }
+        return false;
     }
 }

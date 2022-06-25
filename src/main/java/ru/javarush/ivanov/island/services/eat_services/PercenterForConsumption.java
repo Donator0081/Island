@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public class PercenterForConsumption {
 
-    public synchronized static int getPercents(WildLife firstClazz, WildLife secondClazz) {
+    public synchronized static int getPercents(String firstClazz, String secondClazz) {
         if (firstClazz != null && secondClazz != null) {
             ListOfAnimalsAndHerbs first = ListOfAnimalsAndHerbs.valueOf(firstClazz.getClass().getSimpleName().toUpperCase());
             return ChanceToConsumeFactory.createConsumeList(first).getList().get(secondClazz.getClass().getSimpleName());

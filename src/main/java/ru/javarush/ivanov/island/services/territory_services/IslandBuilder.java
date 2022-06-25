@@ -2,9 +2,9 @@ package ru.javarush.ivanov.island.services.territory_services;
 
 import ru.javarush.ivanov.island.variables.island_params.IslandWidthAndHeight;
 
-public class IslandBuilder implements Runnable {
+public class IslandBuilder  {
 
-    private static void letsBuild(){
+    public void letsBuild(){
         System.out.println("Our Island");
         for (int i = 0; i < IslandWidthAndHeight.getHeight(); i++) {
             for (int j = 0; j < IslandWidthAndHeight.getWidth(); j++) {
@@ -14,10 +14,6 @@ public class IslandBuilder implements Runnable {
         }
     }
 
-    @Override
-    public void run() {
-        letsBuild();
-    }
 
     public IslandBuilder() {
     }

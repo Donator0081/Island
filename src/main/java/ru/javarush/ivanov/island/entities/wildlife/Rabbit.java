@@ -16,18 +16,18 @@ public class Rabbit extends Herbivorous {
     }
 
     @Override
-    public void eat() {
-        super.eat();
+    public boolean eat(Square square) {
+        return super.eat(square);
     }
 
     @Override
-    public void move() {
-        super.move();
+    public boolean move(Square square) {
+        return super.move(square);
     }
 
     @Override
-    public WildLife breed() {
-        return super.breed();
+    public boolean breed(Square square) {
+        return super.breed(square);
     }
 
     public void setRabbitParams(AnimalParams rabbitParams) {
