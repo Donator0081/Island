@@ -29,7 +29,7 @@ public class RatChanceToConsumeList extends ChanceToConsumeList {
     public RatChanceToConsumeList() {
     }
 
-    public Map<String, Integer> getList() {
+    public Map<String, Integer> getListOfPercents() {
         return chanceToConsume;
     }
 

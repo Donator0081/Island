@@ -30,7 +30,7 @@ public class HerbsChanceToConsumeList extends ChanceToConsumeList {
     }
 
     @Override
-    public Map<String, Integer> getList() {
+    public Map<String, Integer> getListOfPercents() {
         return chanceToConsume;
     }
 }

@@ -29,7 +29,7 @@ public class HorseChanceToConsumeList extends ChanceToConsumeList {
     public HorseChanceToConsumeList() {
     }
 
-    public Map<String, Integer> getList() {
+    public Map<String, Integer> getListOfPercents() {
         return chanceToConsume;
     }
 

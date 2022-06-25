@@ -1,8 +1,10 @@
 package ru.javarush.ivanov.island.entities.wildlife;
 
-import ru.javarush.ivanov.island.entities.interfaces.Breedable;
+import org.jetbrains.annotations.NotNull;
+import ru.javarush.ivanov.island.entities.Creature;
 import ru.javarush.ivanov.island.entities.interfaces.WildLife;
 import ru.javarush.ivanov.island.entities.territory.Square;
+import ru.javarush.ivanov.island.services.move_services.CheckForMaxNumberAtSquare;
 import ru.javarush.ivanov.island.variables.AnimalAndHerbsFactory;
 import ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 import ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
@@ -44,11 +46,12 @@ public class Herbs extends Creature implements WildLife {
         return safeBreed(square);
     }
 
-    private boolean safeBreed(Square square) {
+    private boolean safeBreed(@NotNull Square square) {
         square.getLock().lock();
         try {
             Set<Creature> herbs = square.getResidents().get(getType());
-            if (herbs.size() > 2) {
+            boolean checkForAmount = CheckForMaxNumberAtSquare.check(this);
+            if (herbs.size() >= 2 && checkForAmount) {
                 herbs.add(AnimalAndHerbsFactory.createWildLife(ListOfAnimalsAndHerbs.valueOf(this.getClass().getSimpleName().toUpperCase())));
                 return true;
             }

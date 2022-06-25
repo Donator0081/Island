@@ -29,7 +29,7 @@ public class BoarChanceToConsumeList extends ChanceToConsumeList {
     public BoarChanceToConsumeList() {
     }
 
-    public Map<String, Integer> getList() {
+    public Map<String, Integer> getListOfPercents() {
         return chanceToConsume;
     }
 }

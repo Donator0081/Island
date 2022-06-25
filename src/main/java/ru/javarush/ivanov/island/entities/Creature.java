@@ -1,5 +1,6 @@
-package ru.javarush.ivanov.island.entities.wildlife;
+package ru.javarush.ivanov.island.entities;
 
+import org.jetbrains.annotations.NotNull;
 import ru.javarush.ivanov.island.entities.interfaces.Breedable;
 import ru.javarush.ivanov.island.entities.interfaces.WildLife;
 import ru.javarush.ivanov.island.entities.territory.Square;
@@ -17,11 +18,7 @@ public abstract class Creature implements WildLife, Breedable {
     private final String type = this.getClass().getSimpleName();
     private AnimalParams params;
 
-    public Creature() {
-    }
-
-
-    protected boolean safeDie(Square square) {
+    protected boolean safeDie(@NotNull Square square) {
         square.getLock().lock();
         try {
             return square.remove(this);
@@ -42,7 +39,7 @@ public abstract class Creature implements WildLife, Breedable {
         return false;
     }
 
-    protected boolean safeAddTo(Square square) {
+    protected boolean safeAddTo(@NotNull Square square) {
         square.getLock().lock();
         try {
             Set<Creature> set = square.getResidents().get(type);
@@ -54,7 +51,7 @@ public abstract class Creature implements WildLife, Breedable {
         }
     }
 
-    protected boolean safePollFrom(Square square) {
+    protected boolean safePollFrom(@NotNull Square square) {
         square.getLock().lock();
         try {
             return square.getResidents().get(getType()).remove(this);
@@ -63,19 +60,16 @@ public abstract class Creature implements WildLife, Breedable {
         }
     }
 
-    protected boolean safeFindFood(Square square) {
+    protected boolean safeFindFood(@NotNull Square square) {
         square.getLock().lock();
         try {
-            String randomType = RandomizerForType.getRandomType(square, this);
-            int chanceToEat = PercenterForConsumption.getPercents(this.getType(), randomType);
-            while (chanceToEat < 0) {
-                randomType = RandomizerForType.getRandomType(square, this);
-                chanceToEat = PercenterForConsumption.getPercents(this.getType(), randomType);
-            }
-            Set<Creature> set = square.getResidents().get(randomType);
-            for (Creature creature : set) {
-                boolean resultForEating = RandomizerForConsume.getResult(chanceToEat);
-                if (resultForEating) {
+            String randomType = RandomizerForType.getRandomType(this);
+            PercenterForConsumption percenter = new PercenterForConsumption();
+            int chanceToEat = percenter.getPercents(this.getType(), randomType);
+            boolean resultForEating = RandomizerForConsume.getResult(chanceToEat);
+            if (resultForEating) {
+                Set<Creature> set = square.getResidents().get(randomType);
+                for (Creature creature : set) {
                     boolean enoughFoodForEater = CheckAmountOfConsumption.enoughFood(this, creature);
                     if (enoughFoodForEater) {
                         this.getParams().setTurnsToDeath(2);
@@ -87,10 +81,10 @@ public abstract class Creature implements WildLife, Breedable {
                             return false;
                         }
                     }
+                    set.remove(creature);
+                    creature.setSquareInfo(null);
+                    return true;
                 }
-                set.remove(creature);
-                creature.setSquareInfo(null);
-                return true;
             }
         } finally {
             square.getLock().unlock();

@@ -1,20 +1,20 @@
 package ru.javarush.ivanov.island.services.randomizers;
 
-import ru.javarush.ivanov.island.entities.territory.Square;
-import ru.javarush.ivanov.island.entities.wildlife.Creature;
+import ru.javarush.ivanov.island.entities.Creature;
+import ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 
-import java.util.Set;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomizerForType {
 
-    public static String getRandomType(Square square, Creature creature){
-        Set<String> set = square.getResidents().keySet();
+    public static String getRandomType(Creature creature) {
+        List<String> stringList = ListOfAnimalsAndHerbs.getCurrencies().stream().toList();
         String result = "";
-        for (String s : set) {
-            if (!s.equals(creature.getType())) {
-                result = s;
-                break;
-            }
+        int rnd = ThreadLocalRandom.current().nextInt(0, stringList.size());
+        String s = stringList.get(rnd);
+        if (!s.equals(creature.getType())) {
+            result = s;
         }
         return result;
     }

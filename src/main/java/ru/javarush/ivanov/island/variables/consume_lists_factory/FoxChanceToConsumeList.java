@@ -29,7 +29,7 @@ public class FoxChanceToConsumeList extends ChanceToConsumeList {
     public FoxChanceToConsumeList() {
     }
 
-    public Map<String, Integer> getList() {
+    public Map<String, Integer> getListOfPercents() {
         return chanceToConsume;
     }
 

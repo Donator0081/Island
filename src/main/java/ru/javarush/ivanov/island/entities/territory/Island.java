@@ -14,4 +14,5 @@ public class Island {
     public Island(Square[][] islandTerritory) {
         this.islandTerritory = islandTerritory;
     }
+
 }

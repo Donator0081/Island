@@ -29,7 +29,7 @@ public class DeerChanceToConsumeList extends ChanceToConsumeList {
     public DeerChanceToConsumeList() {
     }
 
-    public Map<String, Integer> getList() {
+    public Map<String, Integer> getListOfPercents() {
         return chanceToConsume;
     }
 }

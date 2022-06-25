@@ -1,7 +1,6 @@
 package ru.javarush.ivanov.island.threads;
 
-import ru.javarush.ivanov.island.entities.wildlife.Animal;
-import ru.javarush.ivanov.island.entities.wildlife.Creature;
+import ru.javarush.ivanov.island.entities.Creature;
 
 import java.util.function.Consumer;
 

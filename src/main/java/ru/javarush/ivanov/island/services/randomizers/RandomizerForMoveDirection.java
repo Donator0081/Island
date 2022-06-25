@@ -3,7 +3,7 @@ package ru.javarush.ivanov.island.services.randomizers;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomizerForMoveDirection {
-    public synchronized static int getResult() {
+    public static int getResult() {
         return ThreadLocalRandom.current().nextInt(1, 5);
     }
 }

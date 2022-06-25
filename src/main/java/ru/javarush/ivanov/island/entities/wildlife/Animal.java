@@ -1,6 +1,8 @@
 package ru.javarush.ivanov.island.entities.wildlife;
 
 
+import org.jetbrains.annotations.NotNull;
+import ru.javarush.ivanov.island.entities.Creature;
 import ru.javarush.ivanov.island.entities.interfaces.Breedable;
 import ru.javarush.ivanov.island.entities.interfaces.Eatable;
 import ru.javarush.ivanov.island.entities.interfaces.Movable;
@@ -41,12 +43,12 @@ public abstract class Animal extends Creature implements WildLife, Eatable, Mova
         return safeBreed(square);
     }
 
-    private boolean safeBreed(Square square) {
+    private boolean safeBreed(@NotNull Square square) {
         square.getLock().lock();
         try {
             Set<Creature> creatures = square.getResidents().get(getType());
             boolean checkForAmount = CheckForMaxNumberAtSquare.check(this);
-            if (creatures.size() > 2 && checkForAmount) {
+            if (creatures.size() >= 2 && checkForAmount) {
                 creatures.add(AnimalAndHerbsFactory.createWildLife(ListOfAnimalsAndHerbs.valueOf(this.getClass().getSimpleName().toUpperCase())));
                 return true;
             }

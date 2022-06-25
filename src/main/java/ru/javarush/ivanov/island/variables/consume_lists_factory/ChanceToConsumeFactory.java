@@ -2,7 +2,7 @@ package ru.javarush.ivanov.island.variables.consume_lists_factory;
 
 import ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 
-public final class ChanceToConsumeFactory {
+public class ChanceToConsumeFactory {
     public static ChanceToConsumeList createConsumeList(ListOfAnimalsAndHerbs listOfAnimalsAndHerbs) {
         return switch (listOfAnimalsAndHerbs) {
             case BEAR -> new BearChanceToConsumeList();
@@ -22,8 +22,5 @@ public final class ChanceToConsumeFactory {
             case SNAKE -> new SnakeChanceToConsumeList();
             case WOLF -> new WolfChanceToConsumeList();
         };
-    }
-
-    private ChanceToConsumeFactory() {
     }
 }

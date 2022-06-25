@@ -1,6 +1,7 @@
 package ru.javarush.ivanov.island.variables;
 
 
+import ru.javarush.ivanov.island.entities.Creature;
 import ru.javarush.ivanov.island.entities.wildlife.*;
 
 public class AnimalAndHerbsFactory {

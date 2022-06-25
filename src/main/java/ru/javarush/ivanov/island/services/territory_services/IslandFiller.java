@@ -1,13 +1,11 @@
 package ru.javarush.ivanov.island.services.territory_services;
 
 import ru.javarush.ivanov.island.entities.territory.Square;
-import ru.javarush.ivanov.island.entities.interfaces.WildLife;
-import ru.javarush.ivanov.island.entities.wildlife.Creature;
+import ru.javarush.ivanov.island.entities.Creature;
 import ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 import ru.javarush.ivanov.island.variables.island_params.IslandWidthAndHeight;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class IslandFiller {
@@ -23,6 +21,7 @@ public class IslandFiller {
                 result[i][j] = square;
             }
         }
+        territoryInfoFiller(result);
         return result;
     }
 
@@ -31,6 +30,14 @@ public class IslandFiller {
         for (String type : listOfAnimals) {
             Set<Creature> set = new HashSet<>(square.getResidents().get(type));
             set.forEach(c -> c.setSquareInfo(square));
+        }
+    }
+
+    private static void territoryInfoFiller(Square[][] squares) {
+        for (Square[] row : squares) {
+            for (Square square : row) {
+                square.setTerritory(squares);
+            }
         }
     }
 

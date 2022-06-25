@@ -29,7 +29,7 @@ public class DuckChanceToConsumeList extends ChanceToConsumeList {
     public DuckChanceToConsumeList() {
     }
 
-    public Map<String, Integer> getList() {
+    public Map<String, Integer> getListOfPercents() {
         return chanceToConsume;
     }
 

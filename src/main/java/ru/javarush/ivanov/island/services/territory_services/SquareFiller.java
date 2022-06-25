@@ -1,9 +1,8 @@
 package ru.javarush.ivanov.island.services.territory_services;
 
 import org.jetbrains.annotations.NotNull;
-import ru.javarush.ivanov.island.entities.wildlife.Creature;
+import ru.javarush.ivanov.island.entities.Creature;
 import ru.javarush.ivanov.island.variables.AnimalAndHerbsFactory;
-import ru.javarush.ivanov.island.entities.interfaces.WildLife;
 import ru.javarush.ivanov.island.services.randomizers.RandomizerForAnimalsPerSquare;
 import ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 

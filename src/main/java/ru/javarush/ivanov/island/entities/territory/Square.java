@@ -1,8 +1,7 @@
 package ru.javarush.ivanov.island.entities.territory;
 
-import ru.javarush.ivanov.island.entities.wildlife.Creature;
+import ru.javarush.ivanov.island.entities.Creature;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -12,6 +11,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Square {
 
     private Map<String, Set<Creature>> residents = new HashMap<>();
+
+    private Square[][] territory;
     private int squareNumberWidth;
     private int squareNumberHeight;
     private final Lock lock = new ReentrantLock(true);
@@ -47,6 +48,14 @@ public class Square {
 
     public void setResidents(Map<String, Set<Creature>> residents) {
         this.residents = residents;
+    }
+
+    public Square[][] getTerritory() {
+        return territory;
+    }
+
+    public void setTerritory(Square[][] territory) {
+        this.territory = territory;
     }
 
     public boolean remove(Creature creature) {

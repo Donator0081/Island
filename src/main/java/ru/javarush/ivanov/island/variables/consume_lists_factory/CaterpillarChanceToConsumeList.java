@@ -29,7 +29,7 @@ public class CaterpillarChanceToConsumeList extends ChanceToConsumeList {
     public CaterpillarChanceToConsumeList() {
     }
 
-    public Map<String, Integer> getList() {
+    public Map<String, Integer> getListOfPercents() {
         return chanceToConsume;
     }
 

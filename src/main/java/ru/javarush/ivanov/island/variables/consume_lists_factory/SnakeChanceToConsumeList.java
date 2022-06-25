@@ -30,7 +30,7 @@ public class SnakeChanceToConsumeList extends ChanceToConsumeList {
     public SnakeChanceToConsumeList() {
     }
 
-    public Map<String, Integer> getList() {
+    public Map<String, Integer> getListOfPercents() {
         return chanceToConsume;
     }
 
