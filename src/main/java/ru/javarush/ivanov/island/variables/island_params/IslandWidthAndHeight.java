@@ -1,25 +1,16 @@
 package ru.javarush.ivanov.island.variables.island_params;
 
 public class IslandWidthAndHeight {
-    private static int width = 100;
-    private static int height = 20;
 
     private IslandWidthAndHeight() {
     }
 
     public static int getWidth() {
-        return width;
-    }
-
-    public static void setWidth(int width) {
-        IslandWidthAndHeight.width = width;
+        return 100;
     }
 
     public static int getHeight() {
-        return height;
+        return 20;
     }
 
-    public static void setHeight(int height) {
-        IslandWidthAndHeight.height = height;
-    }
 }

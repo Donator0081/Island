@@ -10,7 +10,8 @@ public class PercenterForConsumption {
 
     public int getPercents(String firstClazz, String secondClazz) {
         if (firstClazz != null && secondClazz != null) {
-            ListOfAnimalsAndHerbs first = ListOfAnimalsAndHerbs.valueOf(firstClazz.toUpperCase());
+            String nameForEnum = firstClazz.toUpperCase();
+            ListOfAnimalsAndHerbs first = ListOfAnimalsAndHerbs.valueOf(nameForEnum);
             ChanceToConsumeList chanceToConsumeList = ChanceToConsumeFactory.createConsumeList(first);
             return chanceToConsumeList.getListOfPercents().get(secondClazz);
         }

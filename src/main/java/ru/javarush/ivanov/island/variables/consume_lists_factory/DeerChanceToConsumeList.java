@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class DeerChanceToConsumeList extends ChanceToConsumeList {
-    private static Map<String, Integer> chanceToConsume = new HashMap<>();
+    private static final Map<String, Integer> chanceToConsume = new HashMap<>();
 
     static {
         chanceToConsume.put("Bear", 0);

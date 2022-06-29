@@ -70,20 +70,7 @@ public abstract class Creature implements WildLife, Breedable {
             if (resultForEating) {
                 Set<Creature> set = square.getResidents().get(randomType);
                 for (Creature creature : set) {
-                    boolean enoughFoodForEater = CheckAmountOfConsumption.enoughFood(this, creature);
-                    if (enoughFoodForEater) {
-                        this.getParams().setTurnsToDeath(2);
-                    } else {
-                        this.getParams().setTurnsToDeath(this.getParams().getTurnsToDeath() - 1);
-                        if (this.getParams().getTurnsToDeath() <= 0) {
-                            this.setSquareInfo(null);
-                            square.getResidents().get(getType()).remove(this);
-                            return false;
-                        }
-                    }
-                    set.remove(creature);
-                    creature.setSquareInfo(null);
-                    return true;
+                    return checkForEnoughFood(square, set, creature);
                 }
             }
         } finally {
@@ -92,15 +79,29 @@ public abstract class Creature implements WildLife, Breedable {
         return false;
     }
 
+    private boolean checkForEnoughFood(@NotNull Square square, Set<Creature> set, Creature creature) {
+        boolean enoughFoodForEater = CheckAmountOfConsumption.enoughFood(this, creature);
+        if (enoughFoodForEater) {
+            this.getParams().setTurnsToDeath(2);
+        } else {
+            this.getParams().setTurnsToDeath(this.getParams().getTurnsToDeath() - 1);
+            if (this.getParams().getTurnsToDeath() <= 0) {
+                this.setSquareInfo(null);
+                square.getResidents().get(getType()).remove(this);
+                return false;
+            }
+        }
+        set.remove(creature);
+        creature.setSquareInfo(null);
+        return true;
+    }
+
+
     public String getType() {
         return type;
     }
 
     public AnimalParams getParams() {
         return params;
-    }
-
-    public void setParams(AnimalParams params) {
-        this.params = params;
     }
 }

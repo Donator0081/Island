@@ -12,7 +12,7 @@ public class Statistic {
     public void giveMeStatistic(Island island) {
         for (int i = 0; i < IslandWidthAndHeight.getWidth(); i++) {
             for (int j = 0; j < IslandWidthAndHeight.getHeight(); j++) {
-                HashMap<String, Set<Creature>> creaturesPerSquare = new HashMap<>(island.getIslandTerritory()[i][j].getResidents());
+                Map<String, Set<Creature>> creaturesPerSquare = island.getIslandTerritory()[i][j].getResidents();
                 System.out.println("WildLife at square " + i + " " + j);
                 for (String type : ListOfAnimalsAndHerbs.getCurrencies()) {
                     Set<Creature> tempSet = creaturesPerSquare.get(type);

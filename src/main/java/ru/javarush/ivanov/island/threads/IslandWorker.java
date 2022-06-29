@@ -2,7 +2,7 @@ package ru.javarush.ivanov.island.threads;
 
 
 import ru.javarush.ivanov.island.entities.territory.Island;
-import ru.javarush.ivanov.island.services.territory_services.IslandBuilder;
+import ru.javarush.ivanov.island.services.territory_services.IslandModelBuilder;
 import ru.javarush.ivanov.island.services.territory_services.Statistic;
 import ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 
@@ -20,8 +20,8 @@ public class IslandWorker extends Thread {
     public void run() {
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(4);
         Statistic statistic = new Statistic();
-        IslandBuilder islandBuilder = new IslandBuilder();
-        islandBuilder.letsBuild();
+        IslandModelBuilder islandModelBuilder = new IslandModelBuilder();
+        islandModelBuilder.letsBuild();
         statistic.giveMeStatistic(island);
         Set<String> listOfAnimals = ListOfAnimalsAndHerbs.getCurrencies();
         List<AnimalThread> animalThreads = listOfAnimals.stream().map(o -> new AnimalThread(o, island)).toList();

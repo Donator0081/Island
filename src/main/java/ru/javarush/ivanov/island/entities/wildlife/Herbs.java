@@ -12,7 +12,7 @@ import ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 import java.util.Set;
 
 public class Herbs extends Creature implements WildLife {
-    private AnimalParams herbsParams = new AnimalParams();
+    private final AnimalParams herbsParams = new AnimalParams();
     private Square squareInfo;
 
     public Herbs() {
@@ -20,10 +20,6 @@ public class Herbs extends Creature implements WildLife {
         herbsParams.setMaxNumberPerSquare(200);
         herbsParams.setSpeed(0);
         herbsParams.setAmountOfFoodForSatiety(0);
-    }
-
-    public void setHerbsParams(AnimalParams herbsParams) {
-        this.herbsParams = herbsParams;
     }
 
     @Override

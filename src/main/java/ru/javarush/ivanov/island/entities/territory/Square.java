@@ -13,8 +13,8 @@ public class Square {
     private Map<String, Set<Creature>> residents = new HashMap<>();
 
     private Square[][] territory;
-    private int squareNumberWidth;
-    private int squareNumberHeight;
+    private final int squareNumberWidth;
+    private final int squareNumberHeight;
     private final Lock lock = new ReentrantLock(true);
 
     public Square(int squareNumberWidth, int squareNumberHeight) {
@@ -26,17 +26,10 @@ public class Square {
         return squareNumberWidth;
     }
 
-    public void setSquareNumberWidth(int squareNumberWidth) {
-        this.squareNumberWidth = squareNumberWidth;
-    }
-
     public int getSquareNumberHeight() {
         return squareNumberHeight;
     }
 
-    public void setSquareNumberHeight(int squareNumberHeight) {
-        this.squareNumberHeight = squareNumberHeight;
-    }
 
     public Lock getLock() {
         return lock;

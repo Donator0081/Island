@@ -5,7 +5,7 @@ import ru.javarush.ivanov.island.entities.territory.Square;
 import ru.javarush.ivanov.island.variables.animal_params.AnimalParams;
 
 public class Goat extends Herbivorous {
-    private AnimalParams goatParams = new AnimalParams();
+    private final AnimalParams goatParams = new AnimalParams();
     private Square squareInfo;
 
     public Goat() {
@@ -28,10 +28,6 @@ public class Goat extends Herbivorous {
     @Override
     public boolean breed(Square square) {
         return super.breed(square);
-    }
-
-    public void setGoatParams(AnimalParams goatParams) {
-        this.goatParams = goatParams;
     }
 
     @Override

@@ -1,6 +1,5 @@
 package ru.javarush.ivanov.island.variables;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -27,10 +26,6 @@ public enum ListOfAnimalsAndHerbs {
 
     ListOfAnimalsAndHerbs(String currency) {
         this.currency = currency;
-    }
-
-    public String getCurrency() {
-        return currency;
     }
 
     public static Set<String> getCurrencies() {

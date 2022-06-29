@@ -2,7 +2,7 @@ package ru.javarush.ivanov.island.services.territory_services;
 
 import ru.javarush.ivanov.island.variables.island_params.IslandWidthAndHeight;
 
-public class IslandBuilder  {
+public class IslandModelBuilder {
 
     public void letsBuild(){
         System.out.println("Our Island");
@@ -15,6 +15,6 @@ public class IslandBuilder  {
     }
 
 
-    public IslandBuilder() {
+    public IslandModelBuilder() {
     }
 }
