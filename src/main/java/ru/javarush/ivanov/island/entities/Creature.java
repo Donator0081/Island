@@ -82,10 +82,10 @@ public abstract class Creature implements WildLife, Breedable {
     private boolean checkForEnoughFood(@NotNull Square square, Set<Creature> set, Creature creature) {
         boolean enoughFoodForEater = CheckAmountOfConsumption.enoughFood(this, creature);
         if (enoughFoodForEater) {
-            this.getParams().setTurnsToDeath(2);
+            this.getParams().setTurnsBeforeCreatureDied(2);
         } else {
-            this.getParams().setTurnsToDeath(this.getParams().getTurnsToDeath() - 1);
-            if (this.getParams().getTurnsToDeath() <= 0) {
+            this.getParams().setTurnsBeforeCreatureDied(this.getParams().getTurnsBeforeCreatureDied() - 1);
+            if (this.getParams().getTurnsBeforeCreatureDied() <= 0) {
                 this.setSquareInfo(null);
                 square.getResidents().get(getType()).remove(this);
                 return false;

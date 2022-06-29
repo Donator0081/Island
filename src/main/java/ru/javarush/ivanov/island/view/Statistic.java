@@ -1,4 +1,4 @@
-package ru.javarush.ivanov.island.services.territory_services;
+package ru.javarush.ivanov.island.view;
 
 import ru.javarush.ivanov.island.entities.territory.Island;
 import ru.javarush.ivanov.island.entities.Creature;

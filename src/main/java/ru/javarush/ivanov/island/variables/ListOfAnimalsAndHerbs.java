@@ -24,6 +24,10 @@ public enum ListOfAnimalsAndHerbs {
 
     final String currency;
 
+    public String getCurrency() {
+        return currency;
+    }
+
     ListOfAnimalsAndHerbs(String currency) {
         this.currency = currency;
     }

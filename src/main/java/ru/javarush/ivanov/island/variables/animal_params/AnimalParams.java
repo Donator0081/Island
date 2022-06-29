@@ -5,7 +5,7 @@ public class AnimalParams {
     private int maxNumberPerSquare;
     private int speed;
     private double amountOfFoodForSatiety;
-    private int turnsToDeath = 2;
+    private int turnsBeforeCreatureDied = 2;
 
     public AnimalParams() {
     }
@@ -42,11 +42,11 @@ public class AnimalParams {
         this.amountOfFoodForSatiety = amountOfFoodForSatiety;
     }
 
-    public int getTurnsToDeath() {
-        return turnsToDeath;
+    public int getTurnsBeforeCreatureDied() {
+        return turnsBeforeCreatureDied;
     }
 
-    public void setTurnsToDeath(int turnsToDeath) {
-        this.turnsToDeath = turnsToDeath;
+    public void setTurnsBeforeCreatureDied(int turnsBeforeCreatureDied) {
+        this.turnsBeforeCreatureDied = turnsBeforeCreatureDied;
     }
 }

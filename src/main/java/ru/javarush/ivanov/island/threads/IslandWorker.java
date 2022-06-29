@@ -2,8 +2,8 @@ package ru.javarush.ivanov.island.threads;
 
 
 import ru.javarush.ivanov.island.entities.territory.Island;
-import ru.javarush.ivanov.island.services.territory_services.IslandModelBuilder;
-import ru.javarush.ivanov.island.services.territory_services.Statistic;
+import ru.javarush.ivanov.island.view.IslandModelBuilder;
+import ru.javarush.ivanov.island.view.Statistic;
 import ru.javarush.ivanov.island.variables.ListOfAnimalsAndHerbs;
 
 import java.util.List;
@@ -25,6 +25,10 @@ public class IslandWorker extends Thread {
         statistic.giveMeStatistic(island);
         Set<String> listOfAnimals = ListOfAnimalsAndHerbs.getCurrencies();
         List<AnimalThread> animalThreads = listOfAnimals.stream().map(o -> new AnimalThread(o, island)).toList();
+        executorRunner(executor, statistic, animalThreads);
+    }
+
+    private void executorRunner(ScheduledExecutorService executor, Statistic statistic, List<AnimalThread> animalThreads) {
         executor.scheduleAtFixedRate(() -> {
             ExecutorService executorForAnimal = Executors.newFixedThreadPool(5);
             animalThreads.forEach(executorForAnimal::submit);

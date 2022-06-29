@@ -1,4 +1,4 @@
-package ru.javarush.ivanov.island.services.territory_services;
+package ru.javarush.ivanov.island.view;
 
 import ru.javarush.ivanov.island.variables.island_params.IslandWidthAndHeight;
 
@@ -12,9 +12,5 @@ public class IslandModelBuilder {
             }
             System.out.println("*");
         }
-    }
-
-
-    public IslandModelBuilder() {
     }
 }
